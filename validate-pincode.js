@@ -8,7 +8,7 @@ const validatePinCode = (_pinCode) => {
     return false;
   }
 
-  if (!pinCode.length >= 6) {
+  if (pinCode.length < 6) {
     return false;
   }
 

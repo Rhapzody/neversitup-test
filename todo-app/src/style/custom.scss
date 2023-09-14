@@ -1,0 +1,82 @@
+body {
+    background: rgb(131, 58, 180);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+}
+
+$app-container-padding: 24px;
+$app-container-max-height: 680px;
+$search-input-height: 80px;
+
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.todo-app-container {
+    max-width: 500px;
+    width: 500px;
+    min-width: 0px;
+    position: relative;
+    min-height: 300px;
+    max-height: $app-container-max-height;
+    padding: $app-container-padding;
+}
+
+.todo-list-container {
+    overflow-y: scroll;
+    height: calc($app-container-max-height - ((2 * $app-container-padding) + $search-input-height));
+    max-height: calc($app-container-max-height - ((2 * $app-container-padding) + $search-input-height));
+    min-height: 0px;
+}
+
+.to-do-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    .todo-actions {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .todo-title {
+        min-width: 0px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .todo-create-date {
+        min-width: 0px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 10px;
+    }
+}
+
+.min-w-0 {
+    min-width: 0px;
+}
+
+::-webkit-scrollbar{
+	width: 0px;
+}
+
+::-webkit-scrollbar-track-piece{
+	background-color: #FFF;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #CBCBCB;
+	outline: 2px solid #FFF;
+	outline-offset: -2px;
+	border: .1px solid #B7B7B7;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color: #909090;
+}
